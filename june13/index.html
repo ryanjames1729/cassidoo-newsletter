@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | June 13</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>June 13 Programming Problem</h1>
+                <p id="input">Programming Input: "hello world"</p>
+                <p id="output">Programming Output: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+                function extraVowels(str, n) {              <br/>
+                &ensp;    const vowels = "aeiouAEIOU";            <br/>
+                &ensp;    let output = "";                        <br/>
+                &ensp;    [...str].forEach(letter => {            <br/>
+                &ensp;&ensp;    if (vowels.includes(letter)) {      <br/>
+                &ensp;&ensp;&ensp;  for(let i = 0; i < n; i++) {    <br/>
+                &ensp;&ensp;&ensp;&ensp;&ensp;output += letter;           <br/>
+                &ensp;&ensp;&ensp;&ensp;}                               <br/>
+                &ensp;&ensp;&ensp;}                                   <br/>       
+                &ensp;&ensp;&ensp;else{                               <br/>
+                &ensp;&ensp;&ensp;&ensp;output += letter;               <br/>
+                &ensp;&ensp;&ensp;}                                   <br/>
+                &ensp;&ensp;})                                      <br/>    
+                &ensp;return output;                            <br/>
+                }
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
