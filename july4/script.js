@@ -62,7 +62,7 @@ const wildcardNumbers = () => {
     return count;
 }
 
-function setsByRuns () {
+const setsByRuns = () =>{
     // number sort
     let possibleSets = [];
     currentHand.sort(valueSort);
@@ -127,7 +127,7 @@ function setsByRuns () {
     return possibleSets;
 }
 
-function setsByNumbers () {
+const setsByNumbers = () => {
     let possibleSets = [];
     for(let i = 0; i < currentHand.length-2; i++) {
         let set = [];
@@ -193,18 +193,22 @@ function setsByNumbers () {
     return possibleSets;
 }
 
+function getPossibleSets () {
+    let runSets = setsByRuns();
+    let multiplesSets = setsByNumbers();
+    let currentPossibleSets = [];
+    for (let i = 0; i < runSets.length; i++) {
+        currentPossibleSets.push(runSets[i]);
+    }
+    for (let i = 0; i < multiplesSets.length; i++) {
+        currentPossibleSets.push(multiplesSets[i]);
+    }
+    return currentPossibleSets;
+}
 // Game flow
 let currentGameTiles = shuffle(createGameTiles());
 let currentHand = createHand(currentGameTiles, 14);
-let runSets = setsByRuns();
-let multiplesSets = setsByNumbers();
-let currentPossibleSets = [];
-for (let i = 0; i < runSets.length; i++) {
-    currentPossibleSets.push(runSets[i]);
-}
-for (let i = 0; i < multiplesSets.length; i++) {
-    currentPossibleSets.push(multiplesSets[i]);
-}
+let currentPossibleSets = getPossibleSets();
 
 console.log(currentHand)
 
