@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | July 11</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>July 18 Programming Problem</h1>
+                <p id="input">Test Email:  </p>
+                <p id="output">Output for Email without Flags: </p>
+                <p id="output-2">Output for Email with Flags: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+                function hideCharacters(email, domainFlag) {<br/>
+                    let hiddenEmail = "";<br/>
+                    let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+                    <br/>
+                    // check if valid email<br/>
+                    if (regex.test(email)) {<br/>
+                        <br/>
+                    // hide characters before @<br/>
+                    let userName = email.split("@")[0];<br/>
+                    userName = "*" + userName.substring(1, userName.length-1) + "*";<br/>
+                    hiddenEmail = userName + "@" + email.split("@")[1];<br/>
+                    <br/>
+                    if (domainFlag) {<br/>
+                        // hide characters after @<br/>
+                        let domain = email.split("@")[1];<br/>
+                        let domainArray = domain.split(".");<br/>
+                        domainArray[0] = "*" + domainArray[0].substring(1, domainArray[0].length-1) + "*";<br/>
+                        domain = domainArray.join(".");<br/>
+                        hiddenEmail = hiddenEmail.split("@")[0] + "@" + domain;<br/>
+                    }<br/>
+                    <br/>
+                    return hiddenEmail;<br/>
+                    <br/>
+                    } else {<br/>
+                        return email;<br/>
+                    }<br/>
+                    <br/>
+                }<br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
