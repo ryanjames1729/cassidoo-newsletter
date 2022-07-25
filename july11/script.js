@@ -102,17 +102,16 @@ class LinkedList {
 // implementation of the class
 const lList = new LinkedList();
 lList.printList();
-lList.add(1);
-lList.add(2);
-lList.add(3);
-lList.add(4);
-lList.add(5);
+for (let i = 1; i <= 5; i++) {
+    lList.add(i);
+}
 lList.printList();
 lList.randomize();
+const deepCopy = lList.randomCopy();
 
 document.getElementById("input").innerHTML += lList.stringReturn();
 
-const deepCopy = lList.randomCopy();
+
 console.log(deepCopy);
 
 document.getElementById("output").innerHTML += JSON.stringify(deepCopy, 2, null);
