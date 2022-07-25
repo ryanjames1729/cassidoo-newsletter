@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | July 11</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>July 25 Programming Problem</h1>
+                <p id="input">Test Arrays:  </p>
+                <p id="output">Intersections: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+                function checkArray (arrayOne, arrayTwo) { <br/>
+                    if (arrayOne.length === arrayTwo.length) {<br/>
+                      for(var i = 0; i < arrayOne.length; i++) {<br/>
+                        if (arrayOne[i] !== arrayTwo[i]) {<br/>
+                          return false;<br/>
+                        }<br/>
+                      }<br/>
+                      return true;<br/>
+                    }<br/>
+                    return false;<br/>
+                  }<br/>
+                  <br/>
+                  function intersection (arrayOne, arrayTwo) {<br/>
+                    var result = [];<br/>
+                    for (var i = 0; i < arrayOne.length; i++) {<br/>
+                      for (var j = 0; j < arrayTwo.length; j++) {<br/>
+                        if (arrayOne[i] === arrayTwo[j]) {<br/>
+                          result.push(i);<br/>
+                          result.push(j);<br/>
+                          if(checkArray(arrayOne.slice(i), arrayTwo.slice(j))) {<br/>
+                            return result;<br/>
+                          } else {<br/>
+                            result = [];<br/>
+                          }<br/>
+                        }<br/>
+                      }<br/>
+                    }<br/>
+                    return result;<br/>
+                  }<br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
