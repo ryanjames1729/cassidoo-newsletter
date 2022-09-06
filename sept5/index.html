@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | Sept 5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>Sept 5 Programming Problem</h1>
+                <p id="input">Write a function fromTo that produces a generator, that will produce values in a range.</p>
+                <p id="output">Tested Output: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+              function fromTo(start, end) { <br/>
+                return function() {<br/>
+                  let next = start;<br/>
+                  if (start <= end) {<br/>
+                    start += 1;<br/>
+                    return next;<br/>
+                  }<br/>
+                }<br/>
+              }<br/>
+              <br/>
+              function fromToRand(start, end) {<br/>
+                let randArr = [];<br/>
+                for (let i = start; i <= end; i++) {<br/>
+                  randArr.push(i);<br/>
+                }<br/>
+                const myStart = start;<br/>
+                // shuffle randArr<br/>
+                for (let i = randArr.length - 1; i > 0; i--) {<br/>
+                  let j = Math.floor(Math.random() * (i + 1));<br/>
+                  [randArr[i], randArr[j]] = [randArr[j], randArr[i]];<br/>
+                }<br/>
+                return function() {<br/>
+                  let next = start;<br/>
+                  if (start <= end) {<br/>
+                    start += 1;<br/>
+                    return randArr[next-myStart];<br/>
+                  }<br/>
+                }<br/>
+              }   <br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
