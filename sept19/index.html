@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | Sept 5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>Sept 19 Programming Problem</h1>
+                <p id="input">Given a set of letter grades, output the GPA (grade point average) of those grades.</p>
+                <p id="output">Tested Output: with grades = ["A", "A-", "B+", "B", "B-"]; </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+              const key = {   <br/>
+                "A": 4.0,<br/>
+                "A-": 3.7,<br/>
+                "B+": 3.3,<br/>
+                "B": 3.0,<br/>
+                "B-": 2.7,<br/>
+                "C+": 2.3,<br/>
+                "C": 2.0,<br/>
+                "C-": 1.7,<br/>
+                "D+": 1.3,<br/>
+                "D": 1.0,<br/>
+                "D-": 0.7,<br/>
+                "F": 0.0<br/>
+              }<br/>
+              <br/>
+              function calculateGPA(grades) {<br/>
+                let sum = 0;<br/>
+                for (let i = 0; i < grades.length; i++) {<br/>
+                  sum += key[grades[i]];<br/>
+                }<br/>
+                return Math.round(sum / grades.length * 10) / 10;<br/>
+              }<br/>
+              <br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
