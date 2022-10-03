@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | Sept 26</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>Oct 3 Programming Problem</h1>
+                <p id="input">Given two integers, generate a “fibonacci-like” sequence of n digits (where the next number in the pattern is the sum of the previous two numbers).
+                        <br/>
+                </p>
+                <p id="output">Tested Output: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+              const dictionary = {<br/>
+                1 : "st",<br/>
+                2 : "nd",<br/>
+                3 : "rd",<br/>
+              }<br/>
+              <br/>
+              function ordinal(number) {<br/>
+                let lastDigit = number % 10;<br/>
+                return lastDigit > 3 ? number + "th" : number + dictionary[lastDigit];<br/>
+              }<br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
