@@ -18,8 +18,8 @@
         <![endif]-->
         <div style="text-align: center">
             <div>
-                <h1>Oct 3 Programming Problem</h1>
-                <p id="input">Given two integers, generate a “fibonacci-like” sequence of n digits (where the next number in the pattern is the sum of the previous two numbers).
+                <h1>Oct 10 Programming Problem</h1>
+                <p id="input">Write a function that truncates words in a string to length n.
                         <br/>
                 </p>
                 <p id="output">Tested Output: </p>
@@ -30,12 +30,29 @@
         <div>
             <h6>Programming Solution</h6>
             <code>
-                function fibLike(a, b, n) {<br/>
-                    var result = [a, b];<br/>
-                    for (var i = 2; i < n; i++) {<br/>
-                        result.push(result[i - 2] + result[i - 1]);<br/>
+                function truncate(str, n) {<br/>
+                    // loop over str by character<br/>
+                    let count = 0;<br/>
+                    temp = "";<br/>
+                    let endOfStr = false;<br/>
+                    for(let i = 0; i < str.length; i++) {<br/>
+                        // if char is a letter, increment count<br/>
+                        if (str[i].match(/[a-z]/i) && count < n) {<br/>
+                            count++;<br/>
+                            temp += str[i];<br/>
+                            if (count == n) {<br/>
+                                endOfStr = true;<br/>
+                            }<br/>
+                        }<br/>
+                        // if char is not a letter<br/>
+                        else if (!str[i].match(/[a-z]/i)) {<br/>
+                            temp += str[i];<br/>
+                            if (endOfStr) {<br/>
+                                count = 0;<br/>
+                            }<br/>
+                        }<br/>
                     }<br/>
-                    return result;<br/>
+                    return temp;<br/>
                 }<br/>
             </code>
         </div>
