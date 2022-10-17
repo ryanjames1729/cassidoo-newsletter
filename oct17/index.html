@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | Oct 17</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>Oct 17 Programming Problem</h1>
+                <p id="input">Let’s say you have n doors that start out as closed. With the first pass across the doors, you toggle every door open. With the second pass, you toggle every second door. With the third, every third door, and so on. Write a function that takes in an integer numberOfPasses, and returns how many doors are open after the number of passes.
+                        <br/>
+                </p>
+                <p id="output">Tested Output: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+                function formatOutput(doorArray) {</br>
+                    let output = "";</br>
+                </br>
+                    for(let i = 0; i < doorArray.length; i++) {</br>
+                        if(doorArray[i]) {</br>
+                            output += "1 ";</br>
+                        } else {</br>
+                            output += "0 ";</br>
+                        }</br>
+                    }</br>
+                    return output;</br>
+                }</br>
+            </br>
+                function passDoors(doors, passes) {</br>
+                    let output = "";</br>
+                    let doorArray = [];</br>
+                </br>
+                    for(let i = 0; i < doors; i++) {</br></doors>
+                        doorArray.push(true);</br>
+                    }</br>
+                    output += "Initial state: " + formatOutput(doorArray) + "</br>";</br>
+                </br>
+                    for(let i = 2; i <= passes+1; i++) {</br>
+                        for(let j = i; j <= doors; j += i) {</br>
+                            doorArray[j - 1] = !doorArray[j - 1];</br>
+                        }</br>
+                        output += "After pass " + (i-1) + ": " + formatOutput(doorArray) + "</br>";</br>
+                    }</br>
+                    return output;</br>
+                }</br>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>

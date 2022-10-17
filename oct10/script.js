@@ -1,12 +1,10 @@
 // Given two integers, generate a “fibonacci-like” sequence of n digits (where the next number in the pattern is the sum of the previous two numbers).
 
 function truncate(str, n) {
-    // loop over str by character
     let count = 0;
     temp = "";
     let endOfStr = false;
     for(let i = 0; i < str.length; i++) {
-        // if char is a letter, increment count
         if (str[i].match(/[a-z]/i) && count < n) {
             count++;
             temp += str[i];
@@ -14,7 +12,6 @@ function truncate(str, n) {
                 endOfStr = true;
             }
         }
-        // if char is not a letter
         else if (!str[i].match(/[a-z]/i)) {
             temp += str[i];
             if (endOfStr) {
