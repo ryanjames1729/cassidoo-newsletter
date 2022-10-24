@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cassidoo-Newsletter | Oct 24</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="text-align: center">
+            <div>
+                <h1>Oct 24 Programming Problem</h1>
+                <p id="input">Given an integer n, print a balanced binary tree with n leaf nodes using the characters /, , and \.
+                        <br/>
+                </p>
+                <p id="output">Tested Output: </p>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div>
+            <h6>Programming Solution</h6>
+            <code>
+                function printTree(n) { <br/>
+                    let output = "\n" <br/>
+                    const rows = Math.ceil(Math.log2(n)) <br/>
+                    const finalRow = Math.pow(2, rows) <br/>
+                    <br/>
+                    for (let i = 1; i <= rows; i++) { <br/>
+                        let rowChar = Math.pow(2,i) <br/>
+                        let sides = (finalRow - rowChar) / 2 <br/>
+                        if(i < rows) { <br/>
+                            output += " ".repeat(sides) + "/\\".repeat(Math.pow(2,i-1)) + "\n" <br/>
+                        } else { <br/>
+                            if(n % 2 == 0) { <br/>
+                                output += "/" + "\\/".repeat(Math.floor(Math.log2(n))-1) + " ".repeat(finalRow - n) + "\\/\\" + "\n" <br/>
+                            } else { <br/>
+                                if (n / 2 < finalRow / 2 - 1) { <br/>
+                                    output += "/\\".repeat(Math.log2(Math.ceil(n/2))) + "/" + " ".repeat(finalRow-n)  + "/\\".repeat(Math.log2(Math.ceil(n/2))) + "\n" <br/>
+                                } else { <br/>
+                                    output += "/\\".repeat(Math.log2(Math.ceil(n/2))) + " ".repeat(finalRow-n)  + "\\" + "/\\".repeat(Math.log2(Math.ceil(n/2))-1) + "\n" <br/>
+                                } <br/>
+                                <br/>
+                            } <br/>
+                        } <br/>
+                    }    <br/>
+                    return output; <br/>
+                    <br/>
+                } <br/>
+            </code>
+        </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
