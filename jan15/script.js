@@ -13,6 +13,10 @@ function flip(arr, dir) {
     }
   }
 
+  else {
+    return "Please enter a valid direction";
+  }
+
   return temp;
 }
 
