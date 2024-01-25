@@ -1,4 +1,3 @@
-// Create a simply binary tree data structure using Node(n)
 class Node {
   constructor(key) {
     this.key = key;
@@ -6,30 +5,13 @@ class Node {
     this.right = null;
   }
 
-  insert(key) {
-    if (key < this.key && this.left) {
-      this.left.insert(key);
-    } else if (key < this.key) {
-      this.left = new Node(key);
-    } else if (key > this.key && this.right) {
-      this.right.insert(key);
-    } else if (key > this.key) {
-      this.right = new Node(key);
-    }
-  }
-
   remove(key) {
     if(key === this.key) {
       this.key = null;
     }
   }
-
-  toString(key){
-    return "Node return:\n" + this.key;
-  }
 }
 
-// printTree(root) prints out the tree in a readable format with each level on the same line.
 printTree = (root) => {
   if (!root) return;
   if (root.key != null) (console.log(root.key));
@@ -50,8 +32,6 @@ printTree = (root) => {
     root.right.remove(root.right.key);
   }
   root.remove(root.key);
-  
-  
   printTree(root.left);
   printTree(root.right);
 }
