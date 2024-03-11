@@ -11,7 +11,6 @@ function printASCII(beg, end) {
     let output = "";
 
     while (beg <= end) {
-        console.log(beg)
         let string = "&#x" + beg + ";";
         output += string;
         beg = hexAdd(beg);
